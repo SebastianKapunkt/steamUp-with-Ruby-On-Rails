@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+game = Game.create(title: 'Star Wars', game_id: 'l1203k1238')
+user = User.create(name: 'UserName', steam_id: '#2399sdf9')
+GameData.create(hours: 12.5, game: game, user: user)
