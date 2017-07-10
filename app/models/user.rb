@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :game_data
+  has_many :game_stats
 end
