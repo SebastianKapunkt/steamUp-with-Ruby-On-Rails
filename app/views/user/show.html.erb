@@ -1,38 +1,29 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="head">
+  <div class="user_box">
+    <div>
+      <%= @user.name %> -
+    </div>
+    <div>
+      # <%= @user.steam_id %>
+    </div>
+  </div>
 
-<p>
-  <strong>SteamId:</strong>
-  <%= @user.steam_id %>
-</p>
+  <div class="header">
+    <div>Game Title</div>
+    <div>Hours spent</div>
+  </div>
+</div>
 
-<% @gamedata.each do |gamedata| %>
-    <p>
-      <strong>played:</strong>
-      <%= gamedata.hours %>
-    </p>
+<div class="game_box">
+  <% @test.each do |game| %>
+      <div>
+        <div>
+          <%= game.game.title %>
+        </div>
 
-    <p>
-      <strong>game id:</strong>
-      <%= gamedata.game_id %>
-      <strong>game name</strong>
-    </p>
-
-    <p>
-      <strong>user id:</strong>
-      <%= gamedata.user_id %>
-    </p>
-<% end %>
-
-<% @game.each do |game| %>
-    <p>
-      <strong>game id:</strong>
-      <%= game.game_id %>
-    </p>
-    <p>
-      <strong>game name</strong>
-      <%= game.title %>
-    </p>
-<% end %>
+        <div>
+          <%= game.hours %>
+        </div>
+      </div>
+  <% end %>
+</div>
