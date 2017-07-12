@@ -16,14 +16,16 @@
 
 <div class="game_box">
   <% @test.each do |game| %>
-      <div>
-        <div>
-          <%= game.game.title %>
-        </div>
+      <%= link_to game_path(game) do %>
+          <div class="game_box_child">
+            <div>
+              <%= game.game.title %>
+            </div>
 
-        <div>
-          <%= game.hours %>
-        </div>
-      </div>
+            <div>
+              <%= game.hours %>
+            </div>
+          </div>
+      <% end %>
   <% end %>
 </div>
