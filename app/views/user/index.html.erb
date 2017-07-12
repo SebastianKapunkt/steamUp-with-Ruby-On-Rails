@@ -1,0 +1,14 @@
+<div class="content_box">
+  <% @users.each do |user| %>
+      <%= link_to user_path(user) do %>
+          <div class="content_box_child">
+            <div>
+              <%= user.name %>
+            </div>
+            <div>
+              <%= user.steam_id %>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+</div>
