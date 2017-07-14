@@ -1,12 +1,13 @@
+<%= link_to 'New games', new_game_path %>
 <div class="content_box">
-  <% @users.each do |user| %>
-      <%= link_to user_path(user) do %>
+  <% @games.each do |game| %>
+      <%= link_to game_path(game) do %>
           <div class="content_box_child">
             <div>
-              <%= user.name %>
+              <%= game.title %>
             </div>
             <div>
-              <%= user.steam_id %>
+              <%= game.game_id %>
             </div>
           </div>
       <% end %>
