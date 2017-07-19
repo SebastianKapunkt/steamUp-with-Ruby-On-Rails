@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   resources :games
   resources :users
 
-  root 'users#index'
+  authenticated :user do
+    root :to => 'users#index'
+  end
+
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
+
 end
