@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20170714113452) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "game_stats", force: :cascade do |t|
     t.float "hours"
-    t.integer "game_id"
-    t.integer "user_id"
+    t.bigint "game_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_game_stats_on_game_id"
@@ -47,4 +50,6 @@ ActiveRecord::Schema.define(version: 20170714113452) do
     t.string "last_sign_in_ip"
   end
 
+  add_foreign_key "game_stats", "games"
+  add_foreign_key "game_stats", "users"
 end
