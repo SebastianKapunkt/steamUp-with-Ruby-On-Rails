@@ -45,6 +45,7 @@ en:
       id: "Game Id"
       description: "A short description of the game"
       edit: "Edit Game"
+    signup: "Sign Up"
   user:
     edit: "Edit User"
     name: "user name"
