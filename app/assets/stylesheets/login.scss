@@ -1,0 +1,65 @@
+@import "colors";
+
+.login_wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  flex-flow: column;
+  width: 400px;
+  align-self: center;
+  padding: 16px;
+  border-radius: 4px;
+  background: $primary-accent-color;
+  color: white;
+  h2 {
+    display: flex;
+    align-self: center;
+  }
+}
+
+.login_actions {
+  margin: 16px 0 16px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}
+
+.login_button {
+  input {
+    width: 128px;
+    border: none;
+    padding: 16px;
+    background: $primary-background;
+    border-radius: 2px;
+    font-size: 1em;
+    transition: $transition;
+    box-shadow: $box-shadow;
+  }
+  :hover {
+    cursor: pointer;
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+.login_input {
+  margin: 20px;
+  input {
+    padding: 12px;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $background;
+    box-sizing: border-box;
+    transition: $transition;
+    &:focus {
+      border-color: $primary-accent-color;
+      outline: none;
+      transition: $transition;
+    }
+  }
+}

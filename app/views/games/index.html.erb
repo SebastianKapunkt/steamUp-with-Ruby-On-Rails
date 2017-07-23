@@ -1,15 +1,24 @@
-<%= link_to 'New games', new_game_path %>
+<div class="content_title"><%= t('views.games.list') %></div>
 <div class="content_box">
   <% @games.each do |game| %>
-      <%= link_to game_path(game) do %>
-          <div class="content_box_child">
-            <div>
-              <%= game.title %>
+      <div class="content_row">
+        <%= link_to game_path(game) do %>
+            <div class="content_box_child">
+              <div>
+                <%= game.title %>
+              </div>
+              <div>
+                <%= game.game_id %>
+              </div>
             </div>
-            <div>
-              <%= game.game_id %>
-            </div>
-          </div>
-      <% end %>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+<div class="add_new">
+  <%= link_to new_game_path do %>
+      <div>
+        <%= t('views.new') %>
+      </div>
   <% end %>
 </div>

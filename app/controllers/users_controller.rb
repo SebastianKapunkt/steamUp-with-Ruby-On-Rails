@@ -10,31 +10,18 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
-    @user = User.new
-  end
-
   def edit
     @user = User.find(params[:id])
   end
 
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      redirect_to @user
-    else
-      render 'new'
-    end
-  end
 
   def update
-      @user = User.find(params[:id])
-
+    @user = User.find(current_user.id)
     if @user.update(user_params)
-      redirect_to @user
+      bypass_sign_in(@user)
+      redirect_to root_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -47,6 +34,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :steam_id)
+    params.require(:user).permit(:name, :steam_id, :email, :password)
   end
 end

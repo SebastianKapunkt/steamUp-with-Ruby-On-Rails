@@ -1,0 +1,29 @@
+<% unless !user_signed_in? %>
+    <div class="sidebar-container">
+      <%= link_to user_path(current_user) do %>
+          <div class="sidebar-header">
+            <div class="sidebar_name"><%= current_user.name %></div>
+            <div class="sidebar_steam_id"><%= current_user.steam_id %></div>
+          </div>
+      <% end %>
+      <div class="sidebar_content">
+        <%= link_to '/users' do %>
+            <div class="row">
+              <div class="sidebar-item"><%= t('views.users') %></div>
+            </div>
+        <% end %>
+        <%= link_to '/games' do %>
+            <div class="row">
+              <div class="sidebar-item"><%= t('views.games.list') %></div>
+            </div>
+        <% end %>
+      </div>
+      <div class="logout">
+        <div>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+              <div class="sidebar-item"><%= t('views.logout') %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>

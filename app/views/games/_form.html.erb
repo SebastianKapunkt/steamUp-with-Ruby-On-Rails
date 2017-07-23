@@ -14,23 +14,24 @@
         </div>
     <% end %>
 
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
+    <div class="text_input">
+      <%= f.text_field :title, placeholder: t('views.games.title'), autofocus: true %>
+    </div>
 
-    <p>
-      <%= f.label :game_id %><br>
-      <%= f.text_field :game_id %>
-    </p>
+    <div class="text_input">
+      <%= f.text_field :game_id, placeholder: t('views.games.id') %>
+    </div>
 
-    <p>
-      <%= f.label :description %><br>
+    <div style="margin-left: 32px">
+      <%= f.label t('views.games.description') %>
+    </div>
+
+    <div class="text_input game_text_area">
       <%= f.text_area :game_description %>
-    </p>
+    </div>
 
-    <p>
+    <div class="create_button">
       <%= f.submit %>
-    </p>
+    </div>
 
 <% end %>

@@ -31,3 +31,24 @@
 
 en:
   hello: "Hello world"
+  views:
+    users: "List of User"
+    edit: "Edit"
+    logout: "Logout"
+    user:
+      edit: "edit my user"
+    new: "+"
+    games:
+      list: "List of Games"
+      new: "New Game"
+      title: "Game Title"
+      id: "Game Id"
+      description: "A short description of the game"
+      edit: "Edit Game"
+  user:
+    edit: "Edit User"
+    name: "user name"
+    steam_id: "steam id"
+    password: "password"
+    email: "email"
+    password_confirmation: "password confirmation"

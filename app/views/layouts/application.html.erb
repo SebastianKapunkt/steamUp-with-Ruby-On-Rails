@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Steamup</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Steamup</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  </head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
 
-  <body>
+<body>
+<div class="main">
+  <%= render template: 'layouts/sidebar' %>
+  <% unless !user_signed_in? %>
+      <div class="placeholder"></div>
+  <% end %>
+  <div class="main-container">
     <%= yield %>
-  </body>
+  </div>
+</div>
+</body>
 </html>

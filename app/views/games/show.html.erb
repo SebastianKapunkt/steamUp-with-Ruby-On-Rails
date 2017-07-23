@@ -1,23 +1,25 @@
-<div class="head">
-  <div class="header_title">
+<div class="content_title">
     <div>
       <%= @game.title %>
     </div>
     <div>
-      # <%= @game.game_id %>
+      #<%= @game.game_id %>
     </div>
-  </div>
-
-  <div class="header">
-    <div>Description</div>
-  </div>
 </div>
 
 <div class="content_box">
-  <div class="content_box_child">
-    <div>
+  <div class="content_row">
+    <div class="content_box_child">
       <%= @game.game_description %>
     </div>
   </div>
+</div>
+
+<div class="add_new" style="font-size: 0.7em">
+  <%= link_to edit_game_path(@game) do %>
+      <div>
+        <%= t('views.edit') %>
+      </div>
+  <% end %>
 </div>
 

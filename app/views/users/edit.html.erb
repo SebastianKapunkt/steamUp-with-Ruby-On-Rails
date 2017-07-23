@@ -1,5 +1,51 @@
-<h1>Edit user</h1>
+<div class="content_title">
+  <div>
+    <%= t('user.edit') %>
+  </div>
+</div>
 
-<%= render 'form' %>
+<div class="content_box">
+  <%= form_for @user do |f| %>
 
-<%= link_to 'Back', users_path %>
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@user.errors.count, "error") %> prohibited
+              this user from being saved:
+            </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="text_input">
+        <%= f.text_field :name, placeholder: t('user.name') %>
+      </div>
+
+      <div class="text_input">
+        <%= f.text_field :steam_id, placeholder: t('user.steam_id') %>
+      </div>
+
+      <div class="text_input">
+        <%= f.text_field :email, placeholder: t('user.email') %>
+      </div>
+
+      <div class="text_input">
+        <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, placeholder: t('user.password'), autocomplete: "off" %>
+      </div>
+
+      <div class="text_input">
+        <%= f.password_field :password_confirmation, placeholder: t('user.password_confirmation'), autocomplete: "off" %>
+      </div>
+
+      <div class="create_button">
+        <%= f.submit %>
+      </div>
+  <% end %>
+</div>

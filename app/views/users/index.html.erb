@@ -1,24 +1,17 @@
-<%= link_to 'New users', new_user_path %>
-<% if user_signed_in? %>
-    <li>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    </li>
-<% else %>
-    <li>
-      <%= link_to('Login', new_user_session_path)  %>
-    </li>
-<% end %>
+<div class="content_title"><%= t('views.users') %></div>
 <div class="content_box">
   <% @users.each do |user| %>
-      <%= link_to user_path(user) do %>
-          <div class="content_box_child">
-            <div>
-              <%= user.name %>
+      <div class="content_row">
+        <%= link_to user_path(user) do %>
+            <div class="content_box_child">
+              <div>
+                <%= user.name %>
+              </div>
+              <div>
+                <%= user.steam_id %>
+              </div>
             </div>
-            <div>
-              <%= user.steam_id %>
-            </div>
-          </div>
-      <% end %>
+        <% end %>
+      </div>
   <% end %>
 </div>
