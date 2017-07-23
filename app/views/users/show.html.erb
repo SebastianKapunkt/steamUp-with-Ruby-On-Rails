@@ -9,7 +9,7 @@
 
 <div class="content_box">
   <h2>Owned Games</h2>
-  <% @game_stat.each do |game| %>
+  <% @game_stats.each do |game| %>
       <div class="content_row">
         <%= link_to game_path(game.game) do %>
             <div class="content_box_child">

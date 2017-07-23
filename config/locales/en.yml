@@ -37,6 +37,7 @@ en:
     logout: "Logout"
     user:
       edit: "edit my user"
+      game_add: "Add game to my list"
     new: "+"
     games:
       list: "List of Games"
@@ -45,6 +46,8 @@ en:
       id: "Game Id"
       description: "A short description of the game"
       edit: "Edit Game"
+      hours: "hours"
+      add: "add game"
     signup: "Sign Up"
   user:
     edit: "Edit User"

@@ -1,0 +1,24 @@
+<div class="content_title">
+  <div>
+    <%= @user.name %>
+  </div>
+  <div>
+    #<%= @user.steam_id %>
+  </div>
+</div>
+
+<div class="content_box">
+  <%= form_for([@user, @user.game_stats.build]) do |f| %>
+      <div class="dropdown">
+        <%= f.select(:game_id, @games) %>
+      </div>
+
+      <div class="text_input">
+        <%= f.text_field :hours, placeholder: t('views.games.hours') %>
+      </div>
+
+      <div class="create_button">
+        <%= f.submit t('views.games.add') %>
+      </div>
+  <% end %>
+</div>

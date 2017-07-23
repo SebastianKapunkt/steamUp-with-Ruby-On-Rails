@@ -65,7 +65,6 @@
 .create_button {
   margin-left: 32px;
   input {
-    width: 128px;
     border: none;
     padding: 16px;
     background: $primary-background;
@@ -77,5 +76,18 @@
   :hover {
     cursor: pointer;
     box-shadow: $box-shadow-hover;
+  }
+}
+
+.dropdown {
+  margin: 32px;
+  select{
+    border: none;
+    padding: 16px;
+    background: $primary-background;
+    border-radius: 2px;
+    font-size: 1.5em;
+    transition: $transition;
+    box-shadow: $box-shadow;
   }
 }

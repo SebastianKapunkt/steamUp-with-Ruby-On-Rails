@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @game_stat = GameStat.where(user_id: params[:id]).includes(:game)
+    @game_stats = GameStat.where(user_id: params[:id]).includes(:game)
   end
 
   def index
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def update
     @user = User.find(current_user.id)
     if @user.update(user_params)
@@ -23,6 +22,12 @@ class UsersController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def create_game
+    @user = User.find(params[:user_id])
+    game_ids = GameStat.where(user_id: @user.id).pluck(:game_id)
+    @games = Game.where.not(id: game_ids).pluck(:title, :id)
   end
 
   def destroy

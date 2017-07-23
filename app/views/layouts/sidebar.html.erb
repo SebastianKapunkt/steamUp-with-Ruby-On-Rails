@@ -17,6 +17,11 @@
               <div class="sidebar-item"><%= t('views.games.list') %></div>
             </div>
         <% end %>
+        <%= link_to user_create_game_path(current_user.id) do %>
+            <div class="row">
+              <div class="sidebar-item"><%= t('views.user.game_add') %></div>
+            </div>
+        <% end %>
       </div>
       <div class="logout">
         <div>
