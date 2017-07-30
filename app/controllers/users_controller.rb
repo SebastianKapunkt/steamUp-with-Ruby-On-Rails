@@ -30,6 +30,44 @@ class UsersController < ApplicationController
     @games = Game.where.not(id: game_ids).pluck(:title, :id)
   end
 
+  def show_random
+    @user = User.find(current_user.id)
+    @users = User.all.pluck(:name, :id)
+  end
+
+  def random
+    puts params[:requested_user]
+    puts params[:user_id]
+
+    my_user_game_stats = GameStat.where(user_id: params[:user_id]).includes(:game)
+    other_user_game_stats = GameStat.where(user_id: params[:requested_user]).includes(:game)
+
+    my_games = Array.new
+    other_games = Array.new
+
+    my_user_game_stats.each do |game|
+      my_games << game.game
+    end
+
+    other_user_game_stats.each do |game|
+      other_games << game.game
+    end
+
+    result = (my_games & other_games)
+
+    puts result.size
+
+    @game = result.shuffle.first
+
+    puts @game
+
+    if request.xhr?
+      render :json => {
+          :game => @game
+      }
+    end
+  end
+
   def destroy
     @user = User.find(params[:ids])
     @user.destroy

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :game_stats
     get 'create_game'
+    get 'show_random'
+    get 'random'
   end
 
   authenticated :user do

@@ -1,0 +1,27 @@
+<%= javascript_tag "var userId = #{@current_user.id};" %>
+
+<div class="content_title">
+  <div>
+    <%= @user.name %>
+  </div>
+  <div>
+    #<%= @user.steam_id %>
+  </div>
+</div>
+
+<div class="content_box">
+  <%= form_for([@user, @user.game_stats.build]) do |f| %>
+      <div class="random">
+        <div id="user_dropdown" class="dropdown">
+          <%= f.select(:id, @users) %>
+        </div>
+
+        <div class="create_button" id="random_button">
+          <input type="button" value="<%= t('views.user.random') %>">
+        </div>
+      </div>
+  <% end %>
+
+  <div class="content_row">
+  </div>
+</div>

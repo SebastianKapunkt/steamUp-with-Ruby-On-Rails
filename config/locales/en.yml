@@ -38,6 +38,7 @@ en:
     user:
       edit: "edit my user"
       game_add: "Add game to my list"
+      random: "random"
     new: "+"
     games:
       list: "List of Games"
@@ -49,6 +50,8 @@ en:
       hours: "hours"
       add: "add game"
     signup: "Sign Up"
+    game:
+      random: "Find random game"
   user:
     edit: "Edit User"
     name: "user name"
