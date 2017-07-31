@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  primary_key: 
+  id: 1
+  title: game_one
+  game_id: 440
+  game_description: "its a text"
 
 two:
-  title: MyString
-  primary_key: 
+  id: 2
+  title: game_two
+  game_id: 441
+  game_description: "its a text a"
